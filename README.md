@@ -37,7 +37,7 @@ Get all the user's playlists (including their songs information)
 Perform a search.
 
     results = client.search('Some Search Text')
-    for songs in results['Songs']
+    for song in results['Songs']:
         print song
 
 Download a song in MP3 format.
