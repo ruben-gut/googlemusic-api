@@ -66,7 +66,8 @@ class Client(object):
 
     def get_stream_url(self, song):
         """Obtain the stream/download URL for a specific song"""
-        return self.protocol.get_stream_url(song.id)
+        result = self.protocol.get_stream_url(song.id)
+        return result['url']
 
     def get_settings(self):
         """Return a dict with the user Google Music's Settings"""
@@ -84,7 +85,11 @@ class Client(object):
         return result
 
     def download_song(self, song, to_folder='.'):
-        """Download the mp3 file of the given Song object"""
+        """
+        Download the mp3 file of the given Song object
+        If you don't provide a to_folder argument, the file will be downloaded
+        to the current folder.
+        """
         url_data = self.protocol.get_stream_url(song.id)
         filename = '%s/%s - %s.mp3' % (to_folder, song.artist, song.title)
         return self.web.download_file(url_data['url'], filename)

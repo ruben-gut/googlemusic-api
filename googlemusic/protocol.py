@@ -193,7 +193,7 @@ class Protocol(object):
         url = '%s?u=0&songid=%s&pt=e' % (self.PLAY_ENDPOINT, song_id)
         result = self.web.xhr_json(url)
         if 'url' in result:
-            return result['url']
+            return result
         else:
             raise RequestException('Could not get the URL: %s' % str(result))
     

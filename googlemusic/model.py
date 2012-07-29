@@ -20,7 +20,7 @@ class Playlist(object):
             self.id = None
             self.title = None
             self.songs = []
-
+    
     def __str__(self):
         return ' - '.join([self.id, self.title])
 
@@ -47,6 +47,9 @@ class Album(object):
             return 'http:%s' % self.artwork_url
         else:
             return None
+    
+    def __str__(self):
+        return ' - '.join([self.name, self.artist])
 
 
 class Song(object):
@@ -71,13 +74,13 @@ class Song(object):
             self.album = None
             self.track = None
             self.artwork_url = None
-
+    
     def get_artwork_url(self):
         """Return the album cover's URL"""
         if self.artwork_url:
             return 'http:%s' % self.artwork_url
         else:
             return None
-
+    
     def __str__(self):
         return ' - '.join([self.id, self.artist, self.title])

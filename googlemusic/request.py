@@ -30,8 +30,8 @@ class CookieManager(cookielib.CookieJar):
 
 class MusicManagerRequest(object):
     """Class to emulate MusicManager requests"""
-    USER_AGENT = 'Music Manager (1, 0, 24, 7712 - Windows)'
-
+    USER_AGENT = 'Music Manager (1, 0, 37, 252 - Mac)'
+    
     def __init__(self, cookies):
         self.cookies = cookies
 
