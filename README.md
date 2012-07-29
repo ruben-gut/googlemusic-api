@@ -21,7 +21,8 @@ The end-user entry point is the Client class.
 
 You can then perform several different operations.
 
-    # Get all the user's playlists (including their songs information)
+Get all the user's playlists (including their songs information)
+
     playlists = client.get_all_playlists()
 
     # iterate the list of playlists
@@ -33,12 +34,14 @@ You can then perform several different operations.
     for song in playlist.songs:
         print song
 
-    # perform a search
+Perform a search.
+
     results = client.search('Some Search Text')
     for songs in results['Songs']
-        prtin song
-    
-    # download a song
+        print song
+
+Download a song in MP3 format.
+
     song = playlist.songs[0]
     client.download_song(song, '/Users/tirino/mp3s/')
 
